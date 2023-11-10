@@ -1,0 +1,42 @@
+modelado de la base de datos
+
+*ENTIDADES* 
+
+usuario (**ED**)
+    - employe_id (**PK**) (campo unico)
+    - name (varchar)
+    - last_name (varchar)
+    - activo (boolean)
+    - fecha de inicio (timeDate)
+
+
+
+    
+ORDEN (**EP**) 
+    - order_id (**PK**)
+    - employe_id (**FK**)
+    - dish_list (array de dish_id)
+    - dish_specifications(TEXT)
+    - table (INTEGER - del 1 al 100)
+    - estate (pending, food delivered, drinks delivered) (como armar esto? Es 100% util?)
+    - time
+    - date
+
+PAYMENT (**ED**)
+    - payment_id (**PK**)
+    - payment_type - condicional dentro del modelo? Hacemos doble control?
+    - payment_value 
+    - discounts
+    - tips_value 
+
+DISH (entidad catalogo o de datos?)
+    - dish_id
+    - name
+    - alergias 
+    - price
+
+PERIODY_FOOD (**EC**)
+    - category_food_id 
+    - name (breackfast, lunch or dinner)
+
+

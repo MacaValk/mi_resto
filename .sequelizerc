@@ -1,0 +1,17 @@
+// const path = require('./database');
+
+// module.exports = {
+//   config: path.resolve( 'config', 'config.json'), // Ruta a tu archivo de configuración de Sequelize
+//   'migrations-path': path.resolve( 'migrations'), // Ruta a tus migraciones
+//   'seeders-path': path.resolve( 'seeders'),       // Ruta a tus seeders (si las usas)
+//   'models-path': path.resolve( 'models')           // Ruta a tus modelos de Sequelize
+// };
+
+const path = require('path');
+
+module.exports = {
+  config: path.join(__dirname, 'database', 'config', 'config.json'),
+  'migrations-path': path.join(__dirname, 'database', 'migrations'),
+  'seeders-path': path.join(__dirname, 'database', 'seeders'),
+  'models-path': path.join(__dirname, 'database', 'models')
+};

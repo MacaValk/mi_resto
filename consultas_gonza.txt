@@ -1,0 +1,24 @@
+- partamos de la base que las ordenes van a ser una entidad temporal, podemos trabajarlas en el store,
+  como almacenamiento temporal(para el front) pero se tiene que llevar un registro final de todas las ventas y eso
+  invocucra las ordenes en el panel del empleado, pero permanente en el registro que se mantenga del sistema.  
+
+- relacion entre el tipo de pago, como hago para extraer la informacion del valor de los dish,
+ e incertarla en la tabla de pedidos de una manera temporal, para despues registrar el pago? Podemos hacerlos
+ con logica desde los controladores? Es eso favorable?. 
+
+- como hacer para que se guarde un registro de cada una de las ordenes, que se realizan? Incluso 
+si es en la misma mesa, me gustaria tener un registro *por tiempo* de las distintas ordenes.  
+
+// una orden concluye con un pago, pero no se si tiene estrictamente una relacion 
+
+// me sirve hacer una tabla intermedia entre orden y dish? 
+
+- dudas sobre el modelo de Orden :
+1_ como me conviene almacenar los diferentes platillos dentro de una orden, 
+    hacemos un array y metemos la info, o la relacionamos con otra tabla. 
+
+2_ table : tenemos dos cuestiones que tratar con el atributo table, 1ro que cada tabla va a tener
+    asociada una orden, unicamente, no quiero que se repitan las mesas. 
+
+3_ 
+
