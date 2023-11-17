@@ -6,7 +6,11 @@ const server = require("./app.js")
 // Configuración de Sequelize - cargar configuración desde config.json
 const env = process.env.NODE_ENV || 'development';
 const config = require('./database/config/config.json')[env];
-const sequelize = new Sequelize(config.database, config.username, config.password, config);
+
+const sequelize = new Sequelize(config.database, config.username, config.password, config,
+  {
+    logging: console.log,
+  });
 
 // Inicializar Sequelize-CLI y aplicar migraciones
 const umzug = new Umzug({
