@@ -45,3 +45,5 @@ ALTER TABLE IF EXISTS public.roles_x_user
 
     ON UPDATE NO ACTION y ON DELETE NO ACTION: Estos especifican el comportamiento que se debe seguir si hay una actualización o eliminación de las filas relacionadas en las tablas referenciadas (Roles y Users). NO ACTION indica que no se realizará ninguna acción en la tabla roles_x_user si se actualizan o eliminan filas en las tablas Roles y Users. Es decir, si se actualiza o elimina un registro en las tablas Roles o Users, no se realizarán 
     cambios automáticos en la tabla roles_x_user. (conviene revisar esto en un futuro)
+
+    me olvide de poner una constraseña en el modelo de usuario xs

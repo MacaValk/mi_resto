@@ -6,7 +6,9 @@ const { User } = require("../database/models");
     const getUsers = async (req, res) => {
         try {
             console.log("entramos a la funcion?")
-        const users = await User.findAll()
+        const users = await User.findAll({
+            attributes: ['user_id', 'first_name', 'last_name', 'active', 'start_date', 'email', 'createdAt', 'updatedAt']
+          })
             console.log("aca estan los usuarios", users)
             res.status(200).send(users)
         } catch (error) {
