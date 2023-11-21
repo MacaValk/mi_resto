@@ -22,3 +22,26 @@ si es en la misma mesa, me gustaria tener un registro *por tiempo* de las distin
 
 3_ 
 
+CREATE TABLE IF NOT EXISTS public.roles_x_user
+(
+    roles_x_user_id integer NOT NULL DEFAULT nextval('roles_x_user_roles_x_user_id_seq'::regclass),
+    "userId" uuid,
+    "roleId" integer,
+    CONSTRAINT roles_x_user_pkey PRIMARY KEY (roles_x_user_id),
+    CONSTRAINT "roles_x_user_roleId_fkey" FOREIGN KEY ("roleId")
+        REFERENCES public."Roles" (rol_id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT "roles_x_user_userId_fkey" FOREIGN KEY ("userId")
+        REFERENCES public."Users" (user_id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.roles_x_user
+    OWNER to postgres;
+
+    ON UPDATE NO ACTION y ON DELETE NO ACTION: Estos especifican el comportamiento que se debe seguir si hay una actualización o eliminación de las filas relacionadas en las tablas referenciadas (Roles y Users). NO ACTION indica que no se realizará ninguna acción en la tabla roles_x_user si se actualizan o eliminan filas en las tablas Roles y Users. Es decir, si se actualiza o elimina un registro en las tablas Roles o Users, no se realizarán 
+    cambios automáticos en la tabla roles_x_user. (conviene revisar esto en un futuro)
